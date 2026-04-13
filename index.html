@@ -969,8 +969,8 @@
        Format: "TAHUN-BULAN-TANGGAL"  contoh: "2026-04-21"
        ============================================================ */
     const hariUjian = {
-      hari1: "2026-04-25",   // ← Ganti tanggal Hari ke-1
-      hari2: "2026-04-26",   // ← Ganti tanggal Hari ke-2
+      hari1: "2026-04-24",   // ← Ganti tanggal Hari ke-1
+      hari2: "2026-04-25",   // ← Ganti tanggal Hari ke-2
       /* hari3: "2026-05-07",   // ← Ganti tanggal Hari ke-3*/
     };
 
@@ -982,59 +982,65 @@
        ============================================================ */
     const subjects = [
       // ── HARI 1 ──────────────────────────────────────────────────
-      {
-        name: "PENDIDIKAN AGAMA KRISTEN", icon: "⛪", hari: "hari1",
-        jamMulai: 8, jamSelesai: 9,
-        code: "PAKZQR",
-        link: "https://script.google.com/macros/s/AKfycbzE8VT2bxA79OowZraCuz9UuXOURLGFHlZ4OUUbAQqwFlwOHAlzvNgcIQANhvrxllNhmw/exec"
-      },
-      {
-        name: "Bahasa Inggris", icon: "🌐", hari: "hari1",
-        jamMulai: 9, jamSelesai: 10,
-        code: "RRPKBM",
-        link: "https://script.google.com/macros/s/AKfycbyWCvIk8nwas9-vUAzRtyZVZwksQjsIbkncmQEns7sZy1IIx7ICZsGqaoYVKPa0VYoA1A/exec"
-      },
-      {
-        name: "Ilmu Pengetahuan Alam", icon: "🔬", hari: "hari1",
-        jamMulai: 10, jamSelesai: 11,
-        code: "ZXRMDT",
-        link: "https://script.google.com/macros/s/AKfycbzLd9DEePbk_yF-qCu4S6iqBVhacsXGhnG55LNAcH9E0zGUr7v6sa0yFnlY6VjrBftcOA/exec"
-      },
-      {
-        name: "Matematika", icon: "📐", hari: "hari1",
-        jamMulai: 8, jamSelesai: 9,
-        code: "MTK4XY",
-        link: "https://script.google.com/macros/s/AKfycbycB-MTzqreRaMMcY3i5u-jpnsAB42_bGY18fqMavWzR-97JaT9dsVD7J3znhrmbFlFWg/exec"
-      },
+  // ── HARI 1 (Jumat) ─────────────────────────────
+  {
+    name: "Pendidikan Agama Kristen", icon: "⛪", hari: "hari1",
+    jamMulai: 8, jamSelesai: 9.1667,
+    code: "PAKZQR",
+    link: "https://script.google.com/macros/s/AKfycbzE8VT2bxA79OowZraCuz9UuXOURLGFHlZ4OUUbAQqwFlwOHAlzvNgcIQANhvrxllNhmw/exec"
+  },
+  {
+    name: "PPKn", icon: "🏛️", hari: "hari1",
+    jamMulai: 9.25, jamSelesai: 10.4167,
+    code: "1IRPKN",
+    link: "https://script.google.com/macros/s/AKfycbyWcS-u8UiyFsCGiZgqlIHafrWm35a_30KRrjSL1NGYRW0YAAcmhXkeroYTg6UWdDqJ/exec"
+  },
+  {
+    name: "Bahasa Inggris", icon: "🌐", hari: "hari1",
+    jamMulai: 11, jamSelesai: 12,
+    code: "RRPKBM",
+    link: "https://script.google.com/macros/s/AKfycbyWCvIk8nwas9-vUAzRtyZVZwksQjsIbkncmQEns7sZy1IIx7ICZsGqaoYVKPa0VYoA1A/exec"
+  },
+  {
+    name: "Ilmu Pengetahuan Alam", icon: "🔬", hari: "hari1",
+    jamMulai: 12.1667, jamSelesai: 13.1667,
+    code: "ZXRMDT",
+    link: "https://script.google.com/macros/s/AKfycbzLd9DEePbk_yF-qCu4S6iqBVhacsXGhnG55LNAcH9E0zGUr7v6sa0yFnlY6VjrBftcOA/exec"
+  },
 
-      // ── HARI 2 ──────────────────────────────────────────────────
-
-      {
-        name: "Pendidikan Pancasila dan Kewarganegaraan", icon: "🏛️", hari: "hari2",
-        jamMulai: 9, jamSelesai: 10,
-        code: "1IRPKN",
-        link: "https://script.google.com/macros/s/AKfycbyWcS-u8UiyFsCGiZgqlIHafrWm35a_30KRrjSL1NGYRW0YAAcmhXkeroYTg6UWdDqJ/exec"
-      },
-      {
-        name: "Informatika", icon: "💻", hari: "hari2",
-        jamMulai: 10, jamSelesai: 11,
-        code: "INF-07",
-        link: "https://script.google.com/macros/s/AKfycbyJadHmcSq2oby_Gr3fjI4ka1lHhZvTZRegIxZ86LWdmiVdChwF0PfkQJztU9O-8b9xdg/exec"
-      },
-
+  // ── HARI 2 (Sabtu) ─────────────────────────────
+  {
+    name: "Bahasa Indonesia", icon: "📝", hari: "hari2",
+    jamMulai: 8, jamSelesai: 9.1667,
+    code: "RX5XTW",
+    link: "https://script.google.com/macros/s/AKfycbw_CpxtKVw9-MR0E5epIn6U4e5U9K73do5uB_ZZWBXPdNJnVwxrEuY5n7c-2QQh0pUy1w/exec"
+  },
+  {
+    name: "Matematika", icon: "📐", hari: "hari2",
+    jamMulai: 9.25, jamSelesai: 10.4167,
+    code: "MTK4XY",
+    link: "https://script.google.com/macros/s/AKfycbycB-MTzqreRaMMcY3i5u-jpnsAB42_bGY18fqMavWzR-97JaT9dsVD7J3znhrmbFlFWg/exec"
+  },
+  {
+    name: "Ilmu Pengetahuan Sosial (IPS)", icon: "🗺️", hari: "hari2",
+    jamMulai: 11, jamSelesai: 12,
+    code: "SEJ-09",
+    link: "https://script.google.com/macros/s/AKfycbxsyf468RoPKJEl6g4ROIzDAAgrtKxOAWguOlYs6BHO8SpuZz-nMjUsRef_uq08EZQdQw/exec"
+  },
+  {
+    name: "Informatika", icon: "💻", hari: "hari2",
+    jamMulai: 12.1667, jamSelesai: 13.1667,
+    code: "INF-07",
+    link: "https://script.google.com/macros/s/AKfycbyJadHmcSq2oby_Gr3fjI4ka1lHhZvTZRegIxZ86LWdmiVdChwF0PfkQJztU9O-8b9xdg/exec"
+  },
       // ── HARI 3 ──────────────────────────────────────────────────
-      {
+    /*   {
         name: "Ilmu Pengetahuan Sosial (IPS)", icon: "🗺️", hari: "hari3",
         jamMulai: 8, jamSelesai: 9,
         code: "SEJ-09",
         link: "https://script.google.com/macros/s/AKfycbxsyf468RoPKJEl6g4ROIzDAAgrtKxOAWguOlYs6BHO8SpuZz-nMjUsRef_uq08EZQdQw/exec"
-      },
-      {
-        name: "Bahasa Indonesia", icon: "📝", hari: "hari3",
-        jamMulai: 9, jamSelesai: 10,
-        code: "RX5XTW",
-        link: "https://script.google.com/macros/s/AKfycbw_CpxtKVw9-MR0E5epIn6U4e5U9K73do5uB_ZZWBXPdNJnVwxrEuY5n7c-2QQh0pUy1w/exec"
-      },
+      }, */
+     
     ];
 
     /* ============================================================
