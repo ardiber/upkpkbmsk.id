@@ -10,11 +10,9 @@
     rel="stylesheet" />
   <style>
     :root {
-      --red: #1565C0;
       --gold: #64B5F6;
       --dark: #0A1628;
       --mid: #0D2144;
-      --card: #0F2D5C;
       --light: #DCEEFF;
       --white: #FFFFFF;
       --success: #27AE60;
@@ -47,13 +45,12 @@
       z-index: 0;
     }
 
-    /* RUNNING TEXT BAR */
+    /* MARQUEE */
     .marquee-bar {
       position: relative;
       z-index: 2;
       background: linear-gradient(90deg, #0D2657, #1565C0, #0D2657);
       border-bottom: 1px solid rgba(100, 181, 246, .25);
-      border-top: 1px solid rgba(100, 181, 246, .15);
       overflow: hidden;
       white-space: nowrap;
       padding: 9px 0;
@@ -95,7 +92,6 @@
     .marquee-track .dot {
       margin: 0 18px;
       color: #64B5F6;
-      font-size: .9rem;
     }
 
     .marquee-track a {
@@ -115,13 +111,12 @@
       }
     }
 
-    /* TOPBAR: tanggal kanan atas */
+    /* TOPBAR */
     .topbar {
       position: relative;
       z-index: 2;
       display: flex;
       justify-content: flex-end;
-      align-items: center;
       padding: 7px 24px 0;
     }
 
@@ -136,11 +131,6 @@
       font-size: .78rem;
       font-weight: 600;
       color: #DCEEFF;
-      letter-spacing: .03em;
-    }
-
-    .date-badge svg {
-      flex-shrink: 0;
     }
 
     /* HEADER */
@@ -171,16 +161,11 @@
       box-shadow: 0 4px 24px rgba(0, 0, 0, .45);
     }
 
-    .logo-text {
-      text-align: left;
-    }
-
     .logo-text .school-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.45rem;
       font-weight: 900;
       color: var(--white);
-      line-height: 1.2;
     }
 
     .logo-text .school-sub {
@@ -219,12 +204,99 @@
       margin: 16px auto 0;
     }
 
+    /* HARI TABS */
+    .hari-tabs {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto 4px;
+      padding: 0 20px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hari-tab {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      background: rgba(15, 45, 92, .6);
+      border: 1px solid rgba(220, 232, 245, .1);
+      text-align: center;
+      transition: all .2s;
+    }
+
+    .hari-tab.active {
+      background: rgba(21, 101, 192, .35);
+      border-color: rgba(100, 181, 246, .5);
+    }
+
+    .hari-tab.today {
+      border-color: rgba(39, 174, 96, .5);
+    }
+
+    .hari-tab-label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(220, 232, 245, .4);
+    }
+
+    .hari-tab-name {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 3px;
+    }
+
+    .hari-tab-date {
+      font-size: .75rem;
+      color: rgba(220, 232, 245, .5);
+      margin-top: 2px;
+    }
+
+    .hari-tab-badge {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: .65rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .badge-today {
+      background: rgba(39, 174, 96, .2);
+      color: #2ECC71;
+      border: 1px solid rgba(39, 174, 96, .3);
+    }
+
+    .badge-done {
+      background: rgba(231, 76, 60, .12);
+      color: #E74C3C;
+      border: 1px solid rgba(231, 76, 60, .2);
+    }
+
+    .badge-upcoming {
+      background: rgba(243, 156, 18, .12);
+      color: #F39C12;
+      border: 1px solid rgba(243, 156, 18, .2);
+    }
+
+    .badge-pending {
+      background: rgba(220, 232, 245, .08);
+      color: rgba(220, 232, 245, .4);
+      border: 1px solid rgba(220, 232, 245, .1);
+    }
+
     /* INFO BAR */
     .info-bar {
       position: relative;
       z-index: 1;
       max-width: 860px;
-      margin: 0 auto 16px;
+      margin: 10px auto 16px;
       padding: 12px 20px;
       display: flex;
       align-items: center;
@@ -295,47 +367,35 @@
     }
 
     .c0::before {
-      background: linear-gradient(90deg, #E74C3C, #E67E22);
+      background: linear-gradient(90deg, #E74C3C, #E67E22)
     }
 
     .c1::before {
-      background: linear-gradient(90deg, #27AE60, #2ECC71);
+      background: linear-gradient(90deg, #27AE60, #2ECC71)
     }
 
     .c2::before {
-      background: linear-gradient(90deg, #2980B9, #3498DB);
+      background: linear-gradient(90deg, #2980B9, #3498DB)
     }
 
     .c3::before {
-      background: linear-gradient(90deg, #8E44AD, #9B59B6);
+      background: linear-gradient(90deg, #8E44AD, #9B59B6)
     }
 
     .c4::before {
-      background: linear-gradient(90deg, #E67E22, #F39C12);
+      background: linear-gradient(90deg, #E67E22, #F39C12)
     }
 
     .c5::before {
-      background: linear-gradient(90deg, #16A085, #1ABC9C);
+      background: linear-gradient(90deg, #16A085, #1ABC9C)
     }
 
     .c6::before {
-      background: linear-gradient(90deg, #D4A017, #F1C40F);
+      background: linear-gradient(90deg, #D4A017, #F1C40F)
     }
 
     .c7::before {
-      background: linear-gradient(90deg, #C0392B, #E74C3C);
-    }
-
-    .c8::before {
-      background: linear-gradient(90deg, #2C3E50, #95A5A6);
-    }
-
-    .c9::before {
-      background: linear-gradient(90deg, #1ABC9C, #48C9B0);
-    }
-
-    .c10::before {
-      background: linear-gradient(90deg, #D35400, #E67E22);
+      background: linear-gradient(90deg, #C0392B, #E74C3C)
     }
 
     .card-head {
@@ -366,6 +426,95 @@
     .card-divider {
       height: 1px;
       background: rgba(220, 232, 245, .07);
+    }
+
+    /* JAM BADGE */
+    .jam-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(0, 0, 0, .22);
+      border: 1px solid rgba(220, 232, 245, .09);
+      border-radius: 8px;
+      padding: 7px 12px;
+    }
+
+    .jam-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      flex: 1;
+    }
+
+    .jam-label {
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(220, 232, 245, .38);
+    }
+
+    .jam-value {
+      font-size: .82rem;
+      font-weight: 700;
+      color: rgba(220, 232, 245, .75);
+    }
+
+    .jam-status {
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .jam-open {
+      background: rgba(39, 174, 96, .18);
+      color: #2ECC71;
+      border: 1px solid rgba(39, 174, 96, .3);
+    }
+
+    .jam-closed {
+      background: rgba(231, 76, 60, .15);
+      color: #E74C3C;
+      border: 1px solid rgba(231, 76, 60, .25);
+    }
+
+    .jam-soon {
+      background: rgba(243, 156, 18, .15);
+      color: #F39C12;
+      border: 1px solid rgba(243, 156, 18, .25);
+    }
+
+    .jam-other {
+      background: rgba(220, 232, 245, .06);
+      color: rgba(220, 232, 245, .35);
+      border: 1px solid rgba(220, 232, 245, .1);
+    }
+
+    /* HARI BADGE di card */
+    .hari-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, .18);
+      border: 1px solid rgba(220, 232, 245, .07);
+      border-radius: 8px;
+      padding: 6px 12px;
+    }
+
+    .hari-badge-label {
+      font-size: .68rem;
+      color: rgba(220, 232, 245, .35);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hari-badge-val {
+      font-size: .78rem;
+      font-weight: 700;
+      color: rgba(220, 232, 245, .6);
+      margin-left: auto;
     }
 
     .code-badge {
@@ -413,6 +562,18 @@
       background: rgba(21, 101, 192, .32);
     }
 
+    .card-btn.locked {
+      background: rgba(231, 76, 60, .1);
+      border-color: rgba(231, 76, 60, .25);
+      color: #E74C3C;
+    }
+
+    .card-btn.other-day {
+      background: rgba(220, 232, 245, .05);
+      border-color: rgba(220, 232, 245, .1);
+      color: rgba(220, 232, 245, .3);
+    }
+
     /* MODAL */
     .modal-overlay {
       position: fixed;
@@ -457,6 +618,10 @@
       background: linear-gradient(90deg, #1565C0, #64B5F6);
     }
 
+    .modal.locked-modal::before {
+      background: linear-gradient(90deg, #C0392B, #E74C3C);
+    }
+
     .modal-overlay.show .modal {
       transform: scale(1) translateY(0);
     }
@@ -475,13 +640,83 @@
       font-size: 1.35rem;
       color: var(--white);
       margin-bottom: 6px;
-      line-height: 1.3;
     }
 
     .modal-hint {
       font-size: .83rem;
       color: rgba(220, 232, 245, .48);
       margin-bottom: 22px;
+    }
+
+    .modal-time-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, .2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(220, 232, 245, .08);
+    }
+
+    .modal-time-info .time-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .modal-time-info .time-label {
+      font-size: .68rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(220, 232, 245, .38);
+    }
+
+    .modal-time-info .time-val {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .locked-notice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 0 16px;
+      text-align: center;
+    }
+
+    .locked-notice .lock-icon {
+      font-size: 2.6rem;
+    }
+
+    .locked-notice .lock-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .locked-notice .lock-msg {
+      font-size: .83rem;
+      color: rgba(220, 232, 245, .55);
+      line-height: 1.6;
+    }
+
+    .locked-notice .lock-time {
+      background: rgba(231, 76, 60, .12);
+      border: 1px solid rgba(231, 76, 60, .25);
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: .88rem;
+      font-weight: 700;
+      color: #E74C3C;
+    }
+
+    .locked-notice .lock-time.upcoming {
+      background: rgba(243, 156, 18, .12);
+      border-color: rgba(243, 156, 18, .25);
+      color: #F39C12;
     }
 
     .input-wrap {
@@ -509,7 +744,6 @@
     .input-wrap input::placeholder {
       color: rgba(220, 232, 245, .18);
       font-size: 1rem;
-      letter-spacing: .1em;
     }
 
     .input-wrap input:focus {
@@ -567,7 +801,6 @@
       border: 1px solid rgba(220, 232, 245, .12);
     }
 
-    /* FOOTER */
     footer {
       position: relative;
       z-index: 1;
@@ -577,17 +810,6 @@
       color: rgba(220, 232, 245, .28);
     }
 
-    .print-btn {
-      cursor: pointer;
-      color: rgba(100, 181, 246, .5);
-      transition: color .2s;
-    }
-
-    .print-btn:hover {
-      color: var(--gold);
-    }
-
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -624,51 +846,6 @@
       }
     }
 
-    .card:nth-child(1) {
-      animation-delay: .04s
-    }
-
-    .card:nth-child(2) {
-      animation-delay: .08s
-    }
-
-    .card:nth-child(3) {
-      animation-delay: .12s
-    }
-
-    .card:nth-child(4) {
-      animation-delay: .16s
-    }
-
-    .card:nth-child(5) {
-      animation-delay: .20s
-    }
-
-    .card:nth-child(6) {
-      animation-delay: .24s
-    }
-
-    .card:nth-child(7) {
-      animation-delay: .28s
-    }
-
-    .card:nth-child(8) {
-      animation-delay: .32s
-    }
-
-    .card:nth-child(9) {
-      animation-delay: .36s
-    }
-
-    .card:nth-child(10) {
-      animation-delay: .40s
-    }
-
-    .card:nth-child(11) {
-      animation-delay: .44s
-    }
-
-    /* PRINT */
     @media print {
       body {
         background: white;
@@ -677,6 +854,7 @@
 
       body::before,
       header,
+      .hari-tabs,
       .info-bar,
       main,
       footer {
@@ -696,7 +874,6 @@
 
 <body>
 
-  <!-- TOPBAR: Tanggal otomatis kanan atas -->
   <div class="topbar">
     <div class="date-badge">
       <svg width="13" height="13" fill="none" viewBox="0 0 24 24">
@@ -707,20 +884,17 @@
     </div>
   </div>
 
-  <!-- RUNNING TEXT -->
   <div class="marquee-bar">
-    <div class="marquee-track" id="marqueeTrack">
-      <span>🎓 Selamat Datang Peserta Ujian Pendidikan Kesetaraan Paket B Setara Sekolah Menengah Pertama (SMP) PKBM
-        SINAR KASIH</span>
+    <div class="marquee-track">
+      <span>🎓 Selamat Datang Peserta Ujian Pendidikan Kesetaraan Paket B Setara SMP PKBM SINAR KASIH</span>
       <span class="dot">*</span>
-      <span>Akses lengkap informasi dan berita di</span>
+      <span>Akses lengkap informasi di</span>
       <span class="dot">🌐</span>
       <a href="https://website.pkbm-sinarkasih.sch.id" target="_blank">website.pkbm-sinarkasih.sch.id</a>
       <span class="dot">*</span>
-      <span>🎓 Selamat Datang Peserta Ujian Pendidikan Kesetaraan Paket B Setara Sekolah Menengah Pertama (SMP) PKBM
-        SINAR KASIH</span>
+      <span>🎓 Selamat Datang Peserta Ujian Pendidikan Kesetaraan Paket B Setara SMP PKBM SINAR KASIH</span>
       <span class="dot">*</span>
-      <span>Akses lengkap informasi dan berita di</span>
+      <span>Akses lengkap informasi di</span>
       <span class="dot">🌐</span>
       <a href="https://website.pkbm-sinarkasih.sch.id" target="_blank">website.pkbm-sinarkasih.sch.id</a>
       <span class="dot">*</span>
@@ -738,137 +912,352 @@
       </div>
     </div>
     <div class="header-title">Portal <span>Ujian</span> Kelas IX</div>
-    <div class="header-title">Versi <span>.2.11</span> </div>
+    <div class="header-title">Versi <span>.2.11</span></div>
     <div class="header-meta">Tahun Pelajaran 2025 / 2026 &nbsp;·&nbsp; Masukkan kode akses dari pengawas</div>
     <div class="divider"></div>
   </header>
+
+  <div class="hari-tabs" id="hariTabs"></div>
 
   <div class="info-bar">
     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" style="flex-shrink:0">
       <circle cx="12" cy="12" r="10" stroke="#64B5F6" stroke-width="1.6" />
       <path d="M12 8v4M12 16h.01" stroke="#64B5F6" stroke-width="2" stroke-linecap="round" />
     </svg>
-    <p><strong>Petunjuk:</strong> Klik kartu mata pelajaran, lalu masukkan <strong>kode akses</strong> yang diberikan
-      pengawas. Setiap mata pelajaran memiliki kode yang berbeda.</p>
+    <p><strong>Petunjuk:</strong> Pilih hari ujian di atas, lalu klik kartu mata pelajaran dan masukkan <strong>kode
+        akses</strong> dari pengawas. Soal hanya bisa dibuka pada <strong>hari dan jam yang telah ditentukan</strong>.
+    </p>
   </div>
 
   <main id="grid"></main>
 
-  <footer>
-    &copy; 2026 PKBM Sinar Kasih &nbsp;·&nbsp; Semua hak dilindungi
-  </footer>
+  <footer>&copy; 2026 PKBM Sinar Kasih &nbsp;·&nbsp; Semua hak dilindungi</footer>
 
-  <!-- Print table -->
+  <!-- Print Table -->
   <div id="printTable">
     <div style="text-align:center;margin-bottom:20px">
       <img
         src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMhBmR7d3B9iOwiNb4QWaKVznzguLJYQu6ms0JoBx7kXlH6s9lNaSpX4XrGeaiNUm0gUgiBXZrhB0R-QrcyCrlS9OvXe9jq6h_8hM3IXX29MOYph-Dg6_vFkHvvQoSlKKGg-y9o_HCo2maYl2GxArwZMQ5eRkOcC0iDSQRJUJeMI1W12YvXAZS2HOPQEiS/s219/Logo%20PKBM%20SINAR%20KASIH.png"
         style="width:70px;margin-bottom:10px" />
-      <h2 style="font-size:16px;margin-bottom:4px">DAFTAR KODE AKSES UJIAN</h2>
-      <p style="font-size:12px;color:#555">PKBM Sinar Kasih – Pendidikan Kesetaraan Paket B Kelas IX – TA 2025/2026</p>
+      <h2 style="font-size:16px;margin-bottom:4px">JADWAL & KODE AKSES UJIAN – 3 HARI</h2>
+      <p style="font-size:12px;color:#555">PKBM Sinar Kasih – Paket B Kelas IX – TA 2025/2026</p>
     </div>
     <table style="width:100%;border-collapse:collapse;font-size:13px">
       <thead>
-        <tr style="background:#f0f0f0">
-          <th style="border:1px solid #ccc;padding:8px 12px;text-align:center">No</th>
-          <th style="border:1px solid #ccc;padding:8px 12px">Mata Pelajaran</th>
-          <th style="border:1px solid #ccc;padding:8px 12px;text-align:center">Kode Akses</th>
+        <tr style="background:#1565C0;color:#fff">
+          <th style="border:1px solid #ccc;padding:8px;text-align:center">No</th>
+          <th style="border:1px solid #ccc;padding:8px">Hari / Tanggal</th>
+          <th style="border:1px solid #ccc;padding:8px">Mata Pelajaran</th>
+          <th style="border:1px solid #ccc;padding:8px;text-align:center">Jam Ujian</th>
+          <th style="border:1px solid #ccc;padding:8px;text-align:center">Kode Akses</th>
         </tr>
       </thead>
       <tbody id="printBody"></tbody>
     </table>
     <p style="margin-top:14px;font-size:11px;color:#888;font-style:italic">⚠ Dokumen ini RAHASIA. Hanya untuk pengawas
-      ujian. Harap tidak disebarkan kepada peserta.</p>
+      ujian.</p>
   </div>
 
   <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <div class="modal-subject" id="modalSubject">Mata Pelajaran</div>
-      <h2>Masukkan Kode Akses</h2>
-      <p class="modal-hint">Minta kode kepada pengawas sebelum memulai ujian.</p>
-      <div class="input-wrap">
-        <input type="text" id="codeInput" maxlength="6" placeholder="••••••" autocomplete="off" spellcheck="false" />
-      </div>
-      <div class="error-msg" id="errorMsg"></div>
-      <div class="modal-btns">
-        <button class="btn btn-secondary" onclick="closeModal()">Batal</button>
-        <button class="btn btn-primary" onclick="verifyCode()">Akses Soal Sekarang →</button>
-      </div>
-    </div>
+    <div class="modal" id="modalBox"></div>
   </div>
 
   <script>
+    /* ============================================================
+       ✏️  BAGIAN 1 — UBAH TANGGAL DI SINI
+       Format: "TAHUN-BULAN-TANGGAL"  contoh: "2026-04-21"
+       ============================================================ */
+    const hariUjian = {
+      hari1: "2026-04-25",   // ← Ganti tanggal Hari ke-1
+      hari2: "2026-04-26",   // ← Ganti tanggal Hari ke-2
+      /* hari3: "2026-05-07",   // ← Ganti tanggal Hari ke-3*/
+    };
+
+    /* ============================================================
+       ✏️  BAGIAN 2 — UBAH JADWAL MATA PELAJARAN DI SINI
+       hari     : "hari1", "hari2", atau "hari3"
+       jamMulai : jam mulai  (contoh: 8 = 08:00 | 8.5 = 08:30 | 8.25 = 08:15 | 8.75 = 08:45)
+       jamSelesai: jam selesai (format sama)
+       ============================================================ */
     const subjects = [
-      { name: "PENDIDIKAN AGAMA KRISTEN", icon: "⛪", code: "PAKZQR", link: "https://script.google.com/macros/s/AKfycbzE8VT2bxA79OowZraCuz9UuXOURLGFHlZ4OUUbAQqwFlwOHAlzvNgcIQANhvrxllNhmw/exec" },
+      // ── HARI 1 ──────────────────────────────────────────────────
+      {
+        name: "PENDIDIKAN AGAMA KRISTEN", icon: "⛪", hari: "hari1",
+        jamMulai: 8, jamSelesai: 9,
+        code: "PAKZQR",
+        link: "https://script.google.com/macros/s/AKfycbzE8VT2bxA79OowZraCuz9UuXOURLGFHlZ4OUUbAQqwFlwOHAlzvNgcIQANhvrxllNhmw/exec"
+      },
+      {
+        name: "Bahasa Inggris", icon: "🌐", hari: "hari1",
+        jamMulai: 9, jamSelesai: 10,
+        code: "RRPKBM",
+        link: "https://script.google.com/macros/s/AKfycbyWCvIk8nwas9-vUAzRtyZVZwksQjsIbkncmQEns7sZy1IIx7ICZsGqaoYVKPa0VYoA1A/exec"
+      },
+      {
+        name: "Ilmu Pengetahuan Alam", icon: "🔬", hari: "hari1",
+        jamMulai: 10, jamSelesai: 11,
+        code: "ZXRMDT",
+        link: "https://script.google.com/macros/s/AKfycbzLd9DEePbk_yF-qCu4S6iqBVhacsXGhnG55LNAcH9E0zGUr7v6sa0yFnlY6VjrBftcOA/exec"
+      },
+      {
+        name: "Matematika", icon: "📐", hari: "hari1",
+        jamMulai: 8, jamSelesai: 9,
+        code: "MTK4XY",
+        link: "https://script.google.com/macros/s/AKfycbycB-MTzqreRaMMcY3i5u-jpnsAB42_bGY18fqMavWzR-97JaT9dsVD7J3znhrmbFlFWg/exec"
+      },
 
-      { name: "Bahasa Inggris", icon: "🌐", code: "RRPKBM", link: "https://script.google.com/macros/s/AKfycbyWCvIk8nwas9-vUAzRtyZVZwksQjsIbkncmQEns7sZy1IIx7ICZsGqaoYVKPa0VYoA1A/exec" },
+      // ── HARI 2 ──────────────────────────────────────────────────
 
-      { name: "Ilmu Pengetahuan Alam", icon: "📖", code: "ZXRMDT", link: "https://script.google.com/macros/s/AKfycbzLd9DEePbk_yF-qCu4S6iqBVhacsXGhnG55LNAcH9E0zGUr7v6sa0yFnlY6VjrBftcOA/exec" },
+      {
+        name: "Pendidikan Pancasila dan Kewarganegaraan", icon: "🏛️", hari: "hari2",
+        jamMulai: 9, jamSelesai: 10,
+        code: "1IRPKN",
+        link: "https://script.google.com/macros/s/AKfycbyWcS-u8UiyFsCGiZgqlIHafrWm35a_30KRrjSL1NGYRW0YAAcmhXkeroYTg6UWdDqJ/exec"
+      },
+      {
+        name: "Informatika", icon: "💻", hari: "hari2",
+        jamMulai: 10, jamSelesai: 11,
+        code: "INF-07",
+        link: "https://script.google.com/macros/s/AKfycbyJadHmcSq2oby_Gr3fjI4ka1lHhZvTZRegIxZ86LWdmiVdChwF0PfkQJztU9O-8b9xdg/exec"
+      },
 
-      { name: "Matematika", icon: "📐", code: "MTK4XY", link: "https://script.google.com/macros/s/AKfycbycB-MTzqreRaMMcY3i5u-jpnsAB42_bGY18fqMavWzR-97JaT9dsVD7J3znhrmbFlFWg/exec" },
-
-      { name: "Pendidikan Pancasila dan Kewarga Negaraan", icon: "🏛️", code: "1IRPKN", link: "https://script.google.com/macros/s/AKfycbyWcS-u8UiyFsCGiZgqlIHafrWm35a_30KRrjSL1NGYRW0YAAcmhXkeroYTg6UWdDqJ/exec" },
-
-      { name: "Informatika", icon: "💻", code: "INF-07", link: "https://script.google.com/macros/s/AKfycbyJadHmcSq2oby_Gr3fjI4ka1lHhZvTZRegIxZ86LWdmiVdChwF0PfkQJztU9O-8b9xdg/exec" },
-
-      { name: "Ilmu Pengetahuan Sosial (IPS)", icon: "🏛️", code: "SEJ-09", link: "https://script.google.com/macros/s/AKfycbxsyf468RoPKJEl6g4ROIzDAAgrtKxOAWguOlYs6BHO8SpuZz-nMjUsRef_uq08EZQdQw/exec" },
-
-      { name: "Bahasa Indonesia", icon: "👥", code: "RX5XTW", link: "https://script.google.com/macros/s/AKfycbw_CpxtKVw9-MR0E5epIn6U4e5U9K73do5uB_ZZWBXPdNJnVwxrEuY5n7c-2QQh0pUy1w/exec" },
-
-      /*{ name: "Pemberdayaan", icon: "🌱", code: "PMB-11", link: "https://script.google.com/macros/s/AKfycbzuO89NlQvE1DG0I2kDKIdI21WystssEJfooBfQ05Io4DPcv1yeR4aFqtxVFt1Fsoy9/exec"},
-
-      { name: "Pemberdayaan", icon: "🌱", code: "PMB-11", link: "https://script.google.com/macros/s/AKfycbzuO89NlQvE1DG0I2kDKIdI21WystssEJfooBfQ05Io4DPcv1yeR4aFqtxVFt1Fsoy9/exec" },*/
+      // ── HARI 3 ──────────────────────────────────────────────────
+      {
+        name: "Ilmu Pengetahuan Sosial (IPS)", icon: "🗺️", hari: "hari3",
+        jamMulai: 8, jamSelesai: 9,
+        code: "SEJ-09",
+        link: "https://script.google.com/macros/s/AKfycbxsyf468RoPKJEl6g4ROIzDAAgrtKxOAWguOlYs6BHO8SpuZz-nMjUsRef_uq08EZQdQw/exec"
+      },
+      {
+        name: "Bahasa Indonesia", icon: "📝", hari: "hari3",
+        jamMulai: 9, jamSelesai: 10,
+        code: "RX5XTW",
+        link: "https://script.google.com/macros/s/AKfycbw_CpxtKVw9-MR0E5epIn6U4e5U9K73do5uB_ZZWBXPdNJnVwxrEuY5n7c-2QQh0pUy1w/exec"
+      },
     ];
 
+    /* ============================================================
+       LOGIKA — tidak perlu diubah
+       ============================================================ */
     let currentSubject = null;
+    let activeHari = null;
 
-    // Build cards
-    const grid = document.getElementById('grid');
-    subjects.forEach((s, i) => {
-      const card = document.createElement('div');
-      card.className = `card c${i}`;
-      card.innerHTML = `
-      <div class="card-head">
-        <div class="card-icon">${s.icon}</div>
-        <div class="card-title">${s.name}</div>
-      </div>
-      <div class="card-divider"></div>
-      <div class="code-badge">
-        <span class="code-label">Kode Akses</span>
-        <span class="code-value">🔒 ••••••</span>
-      </div>
-      <div class="card-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        Masukkan Kode Akses
-      </div>`;
-      card.addEventListener('click', () => openModal(i));
-      grid.appendChild(card);
-    });
+    const namaHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-    // Build print table
-    const tbody = document.getElementById('printBody');
-    subjects.forEach((s, i) => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-      <td style="border:1px solid #ccc;padding:8px;text-align:center">${i + 1}</td>
-      <td style="border:1px solid #ccc;padding:8px">${s.name}</td>
-      <td style="border:1px solid #ccc;padding:8px;text-align:center;font-weight:700;font-family:monospace;letter-spacing:.12em;font-size:15px">${s.code}</td>`;
-      tbody.appendChild(tr);
-    });
+    function formatJam(j) {
+      const h = Math.floor(j), m = Math.round((j - h) * 60);
+      return `${String(h).padStart(2, '0')}.${String(m).padStart(2, '0')}`;
+    }
 
-    function openModal(idx) {
-      currentSubject = subjects[idx];
-      document.getElementById('modalSubject').textContent = currentSubject.name;
-      document.getElementById('codeInput').value = '';
-      document.getElementById('codeInput').className = '';
-      document.getElementById('errorMsg').textContent = '';
-      document.getElementById('errorMsg').style.color = 'var(--error)';
+    function formatTanggal(str) {
+      if (!str || str === "") return "Tanggal belum diset";
+      const d = new Date(str + "T00:00:00");
+      return `${namaHari[d.getDay()]}, ${String(d.getDate()).padStart(2, '0')} ${namaBulan[d.getMonth()]} ${d.getFullYear()}`;
+    }
+
+    function getTodayStr() {
+      const n = new Date();
+      return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`;
+    }
+
+    function getHariStatus(hariKey) {
+      const today = getTodayStr();
+      const tgl = hariUjian[hariKey];
+      if (!tgl || tgl === "") return 'pending';
+      if (tgl === today) return 'today';
+      if (tgl < today) return 'done';
+      return 'upcoming';
+    }
+
+    function getSubjectStatus(s) {
+      const today = getTodayStr();
+      const tglUjian = hariUjian[s.hari];
+      if (!tglUjian || tglUjian === "") return 'pending';
+      if (tglUjian !== today) return tglUjian < today ? 'done' : 'other';
+      const now = new Date();
+      const cur = now.getHours() + now.getMinutes() / 60;
+      if (cur >= s.jamMulai && cur < s.jamSelesai) return 'open';
+      if (cur < s.jamMulai) return 'soon';
+      return 'closed';
+    }
+
+    /* ── Tabs ── */
+    function buildTabs() {
+      const tabs = document.getElementById('hariTabs');
+      tabs.innerHTML = '';
+      ['hari1', 'hari2', 'hari3'].forEach((hk, i) => {
+        const st = getHariStatus(hk);
+        const div = document.createElement('div');
+        div.className = `hari-tab${activeHari === hk ? ' active' : ''}${st === 'today' ? ' today' : ''}`;
+
+        let badge = '';
+        if (st === 'today') badge = `<span class="hari-tab-badge badge-today">● Hari Ini</span>`;
+        else if (st === 'done') badge = `<span class="hari-tab-badge badge-done">Selesai</span>`;
+        else if (st === 'upcoming') badge = `<span class="hari-tab-badge badge-upcoming">Akan Datang</span>`;
+        else badge = `<span class="hari-tab-badge badge-pending">Tanggal Belum Diset</span>`;
+
+        div.innerHTML = `
+        <div class="hari-tab-label">Hari ke-${i + 1}</div>
+        <div class="hari-tab-name">Hari ${i + 1}</div>
+        <div class="hari-tab-date">${formatTanggal(hariUjian[hk])}</div>
+        ${badge}`;
+        div.addEventListener('click', () => { activeHari = hk; buildTabs(); buildCards(); });
+        tabs.appendChild(div);
+      });
+    }
+
+    /* ── Cards ── */
+    function buildCards() {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = '';
+      const filtered = activeHari ? subjects.filter(s => s.hari === activeHari) : subjects;
+
+      filtered.forEach((s, i) => {
+        const status = getSubjectStatus(s);
+        const card = document.createElement('div');
+        card.className = `card c${i % 8}`;
+
+        let statusBadge = '';
+        if (status === 'open') statusBadge = `<span class="jam-status jam-open">● Berlangsung</span>`;
+        else if (status === 'soon') statusBadge = `<span class="jam-status jam-soon">◷ Belum Mulai</span>`;
+        else if (status === 'closed') statusBadge = `<span class="jam-status jam-closed">✕ Selesai</span>`;
+        else if (status === 'done') statusBadge = `<span class="jam-status jam-closed">✕ Hari Lalu</span>`;
+        else if (status === 'other') statusBadge = `<span class="jam-status jam-other">◈ Hari Lain</span>`;
+        else statusBadge = `<span class="jam-status jam-other">— Belum Diset</span>`;
+
+        const isOpen = status === 'open';
+        const btnClass = isOpen ? 'card-btn' : (status === 'other' || status === 'pending' ? 'card-btn other-day' : 'card-btn locked');
+        const btnText = isOpen ? 'Masukkan Kode Akses'
+          : status === 'soon' ? 'Belum Waktunya'
+            : status === 'closed' ? 'Waktu Habis'
+              : status === 'done' ? 'Ujian Telah Selesai'
+                : status === 'other' ? 'Bukan Hari Ini'
+                  : 'Tanggal Belum Diset';
+
+        card.innerHTML = `
+        <div class="card-head">
+          <div class="card-icon">${s.icon}</div>
+          <div class="card-title">${s.name}</div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="hari-badge">
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" stroke="#64B5F6" stroke-width="1.8"/>
+            <path d="M16 2v4M8 2v4M3 10h18" stroke="#64B5F6" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="hari-badge-label">Jadwal</span>
+          <span class="hari-badge-val">${formatTanggal(hariUjian[s.hari])}</span>
+        </div>
+        <div class="jam-badge">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" stroke="#64B5F6" stroke-width="1.8"/>
+            <path d="M12 7v5l3 3" stroke="#64B5F6" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="jam-info">
+            <span class="jam-label">Jam Ujian</span>
+            <span class="jam-value">${formatJam(s.jamMulai)} – ${formatJam(s.jamSelesai)} WITA</span>
+          </div>
+          ${statusBadge}
+        </div>
+        <div class="code-badge">
+          <span class="code-label">Kode Akses</span>
+          <span class="code-value">🔒 ••••••</span>
+        </div>
+        <div class="${btnClass}">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          ${btnText}
+        </div>`;
+        card.addEventListener('click', () => openModal(s));
+        grid.appendChild(card);
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(220,232,245,.35);font-size:.9rem;">Tidak ada mata pelajaran untuk hari ini.</div>`;
+      }
+    }
+
+    /* ── Modal ── */
+    function openModal(s) {
+      const status = getSubjectStatus(s);
+      const box = document.getElementById('modalBox');
+      currentSubject = s;
+
+      if (status !== 'open') {
+        let icon = '🔐', judul = 'Akses Ditutup', pesan = '', timeClass = 'lock-time';
+
+        if (status === 'soon') {
+          icon = '⏳'; judul = 'Belum Waktunya';
+          pesan = `Ujian ini baru dapat dibuka mulai pukul <strong>${formatJam(s.jamMulai)} WITA</strong>. Harap tunggu hingga waktu ujian tiba.`;
+          timeClass = 'lock-time upcoming';
+        } else if (status === 'closed') {
+          icon = '🔒'; judul = 'Waktu Ujian Habis';
+          pesan = `Waktu ujian telah berakhir pukul <strong>${formatJam(s.jamSelesai)} WITA</strong>. Hubungi pengawas jika ada kendala.`;
+        } else if (status === 'done') {
+          icon = '📋'; judul = 'Ujian Sudah Berlalu';
+          pesan = `Ujian ini dilaksanakan pada <strong>${formatTanggal(hariUjian[s.hari])}</strong> dan telah selesai.`;
+        } else if (status === 'other') {
+          icon = '📅'; judul = 'Bukan Hari Ini';
+          pesan = `Ujian mata pelajaran ini dijadwalkan pada <strong>${formatTanggal(hariUjian[s.hari])}</strong>. Silakan kembali pada tanggal tersebut.`;
+          timeClass = 'lock-time upcoming';
+        } else {
+          icon = '⚙️'; judul = 'Tanggal Belum Diset';
+          pesan = 'Tanggal ujian untuk mata pelajaran ini belum dikonfigurasikan. Hubungi administrator.';
+        }
+
+        box.className = 'modal locked-modal';
+        box.innerHTML = `
+        <div class="modal-subject">${s.name}</div>
+        <h2>${judul}</h2>
+        <div class="locked-notice">
+          <div class="lock-icon">${icon}</div>
+          <div class="lock-msg">${pesan}</div>
+          <div class="${timeClass}">
+            📅 ${formatTanggal(hariUjian[s.hari])} &nbsp;|&nbsp; ⏰ ${formatJam(s.jamMulai)} – ${formatJam(s.jamSelesai)} WITA
+          </div>
+        </div>
+        <div class="modal-btns">
+          <button class="btn btn-secondary" onclick="closeModal()">Tutup</button>
+        </div>`;
+      } else {
+        box.className = 'modal';
+        box.innerHTML = `
+        <div class="modal-subject">${s.name}</div>
+        <h2>Masukkan Kode Akses</h2>
+        <p class="modal-hint">Minta kode kepada pengawas sebelum memulai ujian.</p>
+        <div class="modal-time-info">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" style="flex-shrink:0">
+            <circle cx="12" cy="12" r="9" stroke="#27AE60" stroke-width="1.8"/>
+            <path d="M12 7v5l3 3" stroke="#27AE60" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="time-col">
+            <span class="time-label">Jadwal Ujian</span>
+            <span class="time-val">${formatTanggal(hariUjian[s.hari])} &nbsp;·&nbsp; ${formatJam(s.jamMulai)} – ${formatJam(s.jamSelesai)} WITA</span>
+          </div>
+          <span class="jam-status jam-open" style="margin-left:auto;flex-shrink:0">● Terbuka</span>
+        </div>
+        <div class="input-wrap">
+          <input type="text" id="codeInput" maxlength="6" placeholder="••••••" autocomplete="off" spellcheck="false"/>
+        </div>
+        <div class="error-msg" id="errorMsg"></div>
+        <div class="modal-btns">
+          <button class="btn btn-secondary" onclick="closeModal()">Batal</button>
+          <button class="btn btn-primary" onclick="verifyCode()">Akses Soal Sekarang →</button>
+        </div>`;
+        setTimeout(() => {
+          const inp = document.getElementById('codeInput');
+          if (inp) {
+            inp.focus();
+            inp.addEventListener('keydown', e => { if (e.key === 'Enter') verifyCode(); });
+            inp.addEventListener('input', e => { e.target.value = e.target.value.toUpperCase(); });
+          }
+        }, 50);
+      }
       document.getElementById('modalOverlay').classList.add('show');
-      setTimeout(() => document.getElementById('codeInput').focus(), 200);
     }
 
     function closeModal() {
@@ -879,67 +1268,74 @@
     function verifyCode() {
       const input = document.getElementById('codeInput');
       const errorMsg = document.getElementById('errorMsg');
+      if (!input || !currentSubject) return;
       const entered = input.value.trim().toUpperCase();
       const correct = currentSubject.code.toUpperCase();
-
-      if (!entered) {
-        errorMsg.textContent = 'Kode akses tidak boleh kosong.';
-        input.className = 'error';
-        return;
+      if (!entered) { errorMsg.textContent = 'Kode akses tidak boleh kosong.'; input.className = 'error'; return; }
+      if (getSubjectStatus(currentSubject) !== 'open') {
+        errorMsg.style.color = 'var(--error)';
+        errorMsg.textContent = '✕ Waktu ujian sudah tidak berlaku.'; return;
       }
       if (entered === correct) {
         input.className = 'success';
         errorMsg.style.color = 'var(--success)';
         errorMsg.textContent = '✓ Kode benar! Membuka soal…';
-        setTimeout(() => {
-          window.open(currentSubject.link, '_blank');
-          closeModal();
-        }, 800);
+        setTimeout(() => { window.open(currentSubject.link, '_blank'); closeModal(); }, 800);
       } else {
         input.className = 'error';
         errorMsg.style.color = 'var(--error)';
-        errorMsg.textContent = '✗ Kode salah. Tanyakan kembali ke pengawas yang bertugas.';
+        errorMsg.textContent = '✗ Kode salah. Tanyakan kembali ke pengawas.';
         input.value = '';
         setTimeout(() => { input.className = ''; }, 600);
       }
     }
 
-    // === TANGGAL OTOMATIS ===
+    /* ── Tanggal header ── */
     function updateLiveDate() {
       const now = new Date();
-      const hariList = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-      const bulanList = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-        'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-      const hari = hariList[now.getDay()];
-      const tgl = String(now.getDate()).padStart(2, '0');
-      const bulan = bulanList[now.getMonth()];
-      const tahun = now.getFullYear();
-      document.getElementById('liveDateDisplay').textContent = `${hari}, ${tgl} ${bulan} ${tahun}`;
+      document.getElementById('liveDateDisplay').textContent =
+        `${namaHari[now.getDay()]}, ${String(now.getDate()).padStart(2, '0')} ${namaBulan[now.getMonth()]} ${now.getFullYear()}`;
     }
     updateLiveDate();
-    // Update saat tengah malam (pergantian hari)
-    function scheduleNextDayUpdate() {
-      const now = new Date();
-      const msUntilMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1) - now;
-      setTimeout(() => { updateLiveDate(); scheduleNextDayUpdate(); }, msUntilMidnight);
-    }
-    document.getElementById('codeInput').addEventListener('keydown', e => { if (e.key === 'Enter') verifyCode(); });
-    document.getElementById('codeInput').addEventListener('input', e => { e.target.value = e.target.value.toUpperCase(); });
-    document.getElementById('modalOverlay').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
 
-    // Shortcut tersembunyi untuk pengawas: tekan Ctrl + Shift + P
-    document.addEventListener('keydown', function (e) {
-      if (e.ctrlKey && e.shiftKey && e.key === 'P') {
-        e.preventDefault();
-        printCodes();
-      }
+    /* ── Print table ── */
+    const tbody = document.getElementById('printBody');
+    let no = 1;
+    ['hari1', 'hari2', 'hari3'].forEach(hk => {
+      subjects.filter(s => s.hari === hk).forEach(s => {
+        const tr = document.createElement('tr');
+        tr.style.background = no % 2 === 0 ? '#f9f9f9' : '#fff';
+        tr.innerHTML = `
+        <td style="border:1px solid #ccc;padding:8px;text-align:center">${no++}</td>
+        <td style="border:1px solid #ccc;padding:8px">${formatTanggal(hariUjian[hk])}</td>
+        <td style="border:1px solid #ccc;padding:8px">${s.name}</td>
+        <td style="border:1px solid #ccc;padding:8px;text-align:center">${formatJam(s.jamMulai)} – ${formatJam(s.jamSelesai)}</td>
+        <td style="border:1px solid #ccc;padding:8px;text-align:center;font-weight:700;font-family:monospace;letter-spacing:.1em">${s.code}</td>`;
+        tbody.appendChild(tr);
+      });
     });
 
-    function printCodes() {
-      document.getElementById('printTable').style.display = 'block';
-      window.print();
-      document.getElementById('printTable').style.display = 'none';
-    }
+    /* ── Init: auto-pilih tab hari ini, atau hari1 ── */
+    const todayKey = Object.keys(hariUjian).find(k => hariUjian[k] === getTodayStr());
+    activeHari = todayKey || 'hari1';
+    buildTabs();
+    buildCards();
+
+    /* ── Refresh tiap menit ── */
+    setInterval(() => { buildTabs(); buildCards(); }, 60000);
+
+    /* ── Klik di luar modal ── */
+    document.getElementById('modalOverlay').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+
+    /* ── Shortcut pengawas Ctrl+Shift+P ── */
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+        e.preventDefault();
+        document.getElementById('printTable').style.display = 'block';
+        window.print();
+        document.getElementById('printTable').style.display = 'none';
+      }
+    });
   </script>
 </body>
 
